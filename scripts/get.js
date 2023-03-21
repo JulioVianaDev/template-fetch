@@ -12,7 +12,6 @@ async function PegarDados(){
   // console.log(array[0].email);
   // colocar os dados em tela
   function generateTableRows(arr) {
-    
     return arr.map((item,index) => 
       `
       <tr>
@@ -20,6 +19,7 @@ async function PegarDados(){
         <td>${item.name}</td>
         <td>${item.email}</td>
         <td>${item.id}</td>
+        <td><button onclick="opa('${item.id}')">Deletar</button></td>
       </tr>
     `).join('');
   }
@@ -27,6 +27,9 @@ async function PegarDados(){
   const tableBody = document.getElementById("tbody")
   // console.log(tableBody)
   tableBody.innerHTML = generateTableRows(arr);
+}
+function opa(id){
+  console.log(id);
 }
 PegarDados();
 // método 2 
