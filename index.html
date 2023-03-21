@@ -13,8 +13,57 @@
     
 
     <!-- GET -->
-    <div id="json-data"></div>
+    <!-- <div id="json-data"></div> -->
+    <div>
 
+      <table>
+        <thead>
+          <th>Sno</th>
+          <th>Name</th>
+          <th>Roll No</th>
+          <th>Section</th>
+          <th>Gender</th>
+        </thead>
+        <tbody id="tbody1">
+          
+        </tbody>
+      </table>
+    </div>
+    <ul></ul>
+    <script>
+      var stdNo = 0;
+      var tbody1 = document.getElementById('tbody1');
+      function AddItemToTable(name,roll,sec,gen){
+        let tr = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("td");
+        var td4 = document.createElement("td");
+        var td5 = document.createElement("td");
+
+        td1.innerHTML = stdNo++;
+        td2.innerHTML = name;
+        td3.innerHTML = roll;
+        td4.innerHTML = sec;
+        td5.innerHTML = gen;
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tr.appendChild(td5);
+        
+        tbody1.appendChild(tr);
+      }
+
+      function addAllItemsToTable(TheStudent){
+        stdNo = 0;
+        tbody1.innerHTML = "";
+        TheStudent.forEach(element => {
+            AddItemToTable(element.NameOfStd,element.RollNo,element.Section.element.Gender);
+        });
+      }
+    </script>
     <!-- importando os scripts -->
     <script src="./scripts/post.js"> </script>
     <script src="./scripts/get.js"> </script>
