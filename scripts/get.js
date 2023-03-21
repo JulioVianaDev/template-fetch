@@ -13,8 +13,7 @@ async function PegarDados(){
   // colocar os dados em tela
   function generateTableRows(arr) {
     return arr.map((item,index) => 
-      `
-      <tr>
+      `<tr>
         <td>${index}</td>
         <td>${item.name}</td>
         <td>${item.email}</td>
