@@ -7,22 +7,21 @@ async function PegarDados(){
   // const array = Object.values(resultadoConvertido);
   
   const arr = Object.entries(resultadoConvertido).map(([id, values]) => ({ id, ...values }));
-
   // console.log(arr);
   // console.log(array);
   // console.log(array[0].email);
   // colocar os dados em tela
   function generateTableRows(arr) {
     
-    return arr.map(item => {
-      console.log(item);
+    return arr.map((item,index) => 
       `
       <tr>
-        <td>${item.id}</td>
+        <td>${index}</td>
         <td>${item.name}</td>
         <td>${item.email}</td>
+        <td>${item.id}</td>
       </tr>
-    `}).join('');
+    `).join('');
   }
   
   const tableBody = document.getElementById("tbody")
