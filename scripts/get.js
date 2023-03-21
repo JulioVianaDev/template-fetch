@@ -19,7 +19,7 @@ async function PegarDados(){
         <td>${item.name}</td>
         <td>${item.email}</td>
         <td>${item.id}</td>
-        <td><button onclick="opa('${item.id}')">Deletar</button></td>
+        <td><button onclick="deleteData('${item.id}')">Deletar</button></td>
       </tr>
     `).join('');
   }
@@ -28,9 +28,7 @@ async function PegarDados(){
   // console.log(tableBody)
   tableBody.innerHTML = generateTableRows(arr);
 }
-function opa(id){
-  console.log(id);
-}
+
 PegarDados();
 // método 2 
 async function PegarDados2(){
