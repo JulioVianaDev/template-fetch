@@ -19,7 +19,7 @@ async function PegarDados(){
         <td>${item.email}</td>
         <td>${item.id}</td>
         <td><button onclick="deleteData('${item.id}')">Deletar</button></td>
-        <td><button onclick="enviandoDadosAtuais('${item.id}','${item}')">Editar</button></td>
+        <td><button onclick="enviandoDadosAtuais('${item.id}','${item.name}', '${item.email}')">Editar</button></td>
       </tr>
     `).join('');
   }

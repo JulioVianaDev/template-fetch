@@ -1,10 +1,12 @@
 // PUT VS PATCH
 // PUT MODIFICA O OBJETO INTEIRO
 // PATCH MODIFICA APENAS OS ATRIBUTOS
-function enviandoDadosAtuais(id,item){
+function enviandoDadosAtuais(id,nameItem,emailItem){
   const name = document.getElementById('name');
   const email = document.getElementById('email');
-  
+  console.log(nameItem);
+  console.log(emailItem);
+  console.log(id);
 }
 function editData(id,item){
   fetch(`${urlComId}${id}.json`, {
