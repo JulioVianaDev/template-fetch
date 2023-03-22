@@ -25,7 +25,14 @@ function sendData() {
     name: name,
     email: email,
   };
-  
+  // dando um fetch na url que quero salvar no meu banco de dados
+  // nele eu falo que o metodo HTTP é post e o headers é do tipo json
+  // e de body(corpo que enviarei) eu formato o data pra JSON e envio
+  // o .then() vai formatar a resposta caso a requisição funcione, 
+  // dizendo que o que o banco me enviou é 200(ok)
+  // depois disso eu vou mostrar no console a resposta do servidor
+  // e atualizar os dados chamando o get.js com a função pegar dados
+  // o .catch só funciona quando a promisse falhar
   fetch('https://http-fetch-template-default-rtdb.firebaseio.com/pessoas.json', {
     method: 'POST',
     headers: {
