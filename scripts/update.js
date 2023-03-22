@@ -4,6 +4,8 @@
 function enviandoDadosAtuais(id,nameItem,emailItem){
   const name = document.getElementById('name');
   const email = document.getElementById('email');
+  document.getElementById('email').value = emailItem;
+  document.getElementById('name').value = nameItem;
   console.log(nameItem);
   console.log(emailItem);
   console.log(id);
