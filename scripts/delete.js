@@ -7,7 +7,6 @@ function deleteData(id) {
     }
   })
   .then(res =>{
-    
     console.log("deletou com sucesso")
     PegarDados();
   })
