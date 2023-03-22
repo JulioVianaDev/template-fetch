@@ -1,4 +1,8 @@
 function sendData() {
+  if(editMode){
+    console.log("deveria estar editando")
+    return
+  }
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   
