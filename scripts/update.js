@@ -6,8 +6,13 @@ function enviandoDadosAtuais(id,nameItem,emailItem){
   const email = document.getElementById('email');
   document.getElementById('email').value = emailItem;
   document.getElementById('name').value = nameItem;
-  document.getElementById("submit").setAttribute("data-id",id)
-}
+  document.getElementById("submit").setAttribute("data-id",id);
+  document.getElementById("submit").innerHTML="Edite aqui!";
+
+  var editmode = document.getElementById("submit").innerHTML==="Edite aqui!";
+  console.log(editmode);
+} 
+
 function editData(id,item){
   fetch(`${urlComId}${id}.json`, {
     method: 'PATCH',
