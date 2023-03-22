@@ -25,6 +25,7 @@ async function PegarDados(){
   }
   
   const tableBody = document.getElementById("tbody")
+  // connsultando tabela
   // console.log(tableBody)
   tableBody.innerHTML = generateTableRows(arr);
 }
