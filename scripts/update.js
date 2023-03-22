@@ -6,9 +6,7 @@ function enviandoDadosAtuais(id,nameItem,emailItem){
   const email = document.getElementById('email');
   document.getElementById('email').value = emailItem;
   document.getElementById('name').value = nameItem;
-  console.log(nameItem);
-  console.log(emailItem);
-  console.log(id);
+  document.getElementById("submit").setAttribute("data-id",id)
 }
 function editData(id,item){
   fetch(`${urlComId}${id}.json`, {
