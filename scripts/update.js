@@ -25,9 +25,11 @@ async function editData(id){
     body: JSON.stringify(data),
   })
   .then(res =>{
-    console.log("editou")
+    console.log("editou");
     PegarDados();
     document.getElementById("submit").removeAttribute("data-id");
+    document.getElementById('email').value = '';
+    document.getElementById('name').value = ''; 
   })
   .catch(error => console.error(error));
 }
