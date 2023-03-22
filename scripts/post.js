@@ -14,7 +14,13 @@ function sendData() {
   // e leio os value deles para salvar na variavel usando o .value
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
-  
+  // para poder postar algo eu preciso criar um json para enviar
+  // o formato fica assim:
+  // {
+  //   name: "algo que eu digitei",
+  //   email: "algo que eu digitei",
+  // }
+  // então criei uma váriavel chamadata data e formatei o json com as váriaveis que fiz
   const data = {
     name: name,
     email: email,
