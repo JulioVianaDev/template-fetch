@@ -1,6 +1,10 @@
+//a url significa o nome do banco de dados + o tipo de arquivo que quero editar
+// neste exemplo cadastramos pessoas então depois do / colocamos pessoas.json
+// se quisermos adicionar carros colocariamos carros.json
 const url ="https://http-fetch-template-default-rtdb.firebaseio.com/pessoas.json"
-// método 1
+// função que pega os dados da api
 async function PegarDados(){
+  // primeiro de tudo fazemos uma requisição para a api e esperamos a resposta
   const resultado = await fetch(url);
   const resultadoConvertido = await resultado.json();
   const array = Object.values(resultadoConvertido);
