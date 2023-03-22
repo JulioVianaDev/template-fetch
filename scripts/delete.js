@@ -1,6 +1,6 @@
-const urlDelete = 'https://http-fetch-template-default-rtdb.firebaseio.com/pessoas/'
+const urlComId = 'https://http-fetch-template-default-rtdb.firebaseio.com/pessoas/'
 function deleteData(id) {
-  fetch(`${urlDelete}${id}.json`, {
+  fetch(`${urlComId}${id}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
