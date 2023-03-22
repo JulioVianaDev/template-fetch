@@ -4,7 +4,7 @@ function sendData() {
   
   const data = {
     name: name,
-    email: email
+    email: email,
   };
   
   fetch('https://http-fetch-template-default-rtdb.firebaseio.com/pessoas.json', {
@@ -15,6 +15,9 @@ function sendData() {
     body: JSON.stringify(data)
   })
   .then(response => response.json())
-  .then(data => console.log(data))
+  .then(data => {
+    console.log(data)
+    PegarDados();
+  })
   .catch(error => console.error(error));
 }

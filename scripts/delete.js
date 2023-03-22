@@ -6,6 +6,10 @@ function deleteData(id) {
       'Content-Type': 'application/json'
     }
   })
-  .then(console.log("deletou com sucesso"))
+  .then(res =>{
+    
+    console.log("deletou com sucesso")
+    PegarDados();
+  })
   .catch(error => console.error(error));
 }
