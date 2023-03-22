@@ -8,7 +8,10 @@ function sendData() {
     editData(id);
     return
   }
-  
+  // no javascript eu consigo pegar os dados do input, ou seja 
+  // o que o usuario digitou lá no input, então pra isso
+  // eu pego o input que tem o id "name" e o id email
+  // e leio os value deles para salvar na variavel usando o .value
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   
