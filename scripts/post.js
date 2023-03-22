@@ -1,6 +1,8 @@
 function sendData() {
   if(editMode){
-    console.log("deveria estar editando")
+    const id = document.getElementById("submit").getAttribute("data-id");
+
+    editData(id);
     return
   }
   const name = document.getElementById('name').value;

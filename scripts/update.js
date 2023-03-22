@@ -7,27 +7,22 @@ function enviandoDadosAtuais(id,nameItem,emailItem){
   document.getElementById('name').value = nameItem;
   document.getElementById("submit").setAttribute("data-id",id);
   document.getElementById("submit").innerHTML="Edite aqui!";
-
-  console.log(editMode);
-  if(editMode){
-    // editData();
-  }
   document.getElementById("submit").innerHTML = "Cadastrar!";
 } 
 
-async function editData(id,item){
+async function editData(id){
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
-  
+  const data = {
+    name: name,
+    email: email,
+  };
   response = await fetch(`${urlComId}${id}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: {
-      name: name,
-      email: email
-    },
+    body: JSON.stringify(data),
   })
   .then(res =>{
     console.log("editou")
