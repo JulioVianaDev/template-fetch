@@ -26,7 +26,8 @@ async function editData(id){
   })
   .then(res =>{
     console.log("editou")
-    // document.getElementById("submit").removeAttribute("data-id");
+    PegarDados();
+    document.getElementById("submit").removeAttribute("data-id");
   })
   .catch(error => console.error(error));
 }
