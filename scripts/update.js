@@ -15,6 +15,7 @@ function enviandoDadosAtuais(id,nameItem,emailItem){
   document.getElementById("submit").setAttribute("data-id",id);
   document.getElementById("submit").innerHTML="Edite aqui!";
   editMode = document.getElementById("submit").innerHTML !== "Edite aqui!";
+  console.log(editMode)
 } 
 
 async function editData(id){
@@ -38,6 +39,8 @@ async function editData(id){
     document.getElementById('email').value = '';
     document.getElementById('name').value = ''; 
     document.getElementById("submit").innerHTML = "Cadastrar!";
+    editMode = document.getElementById("submit").innerHTML !== "Edite aqui!";
+    console.log(editMode)
   })
   .catch(error => console.error(error));
 }
