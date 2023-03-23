@@ -15,7 +15,6 @@ function deleteData(id) {
     }
   })
   .then(res =>{
-    console.log("deletou com sucesso")
     PegarDados();
   })
   .catch(error => console.error(error));

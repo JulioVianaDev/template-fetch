@@ -4,7 +4,6 @@ function sendData() {
   // então se é a primeira aula e não estou editando pode não fazer o if
   // porque eu estou postando não editando AINDA
   if(!editMode){
-    console.log("eita")
     const id = document.getElementById("submit").getAttribute("data-id");
     editData(id);
     return
@@ -43,8 +42,6 @@ function sendData() {
   })
   .then(response => response.json())
   .then(data => {
-    console.log(data);
-    
     document.getElementById('email').value = '';
     document.getElementById('name').value = ''; 
     PegarDados();

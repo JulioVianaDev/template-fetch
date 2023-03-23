@@ -40,7 +40,6 @@ async function editData(id){
     document.getElementById('name').value = ''; 
     document.getElementById("submit").innerHTML = "Cadastrar!";
     editMode = document.getElementById("submit").innerHTML !== "Edite aqui!";
-    console.log(editMode)
   })
   .catch(error => console.error(error));
 }
