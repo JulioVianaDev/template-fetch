@@ -43,7 +43,10 @@ function sendData() {
   })
   .then(response => response.json())
   .then(data => {
-    console.log(data)
+    console.log(data);
+    
+    document.getElementById('email').value = '';
+    document.getElementById('name').value = ''; 
     PegarDados();
   })
   .catch(error => console.error(error));
