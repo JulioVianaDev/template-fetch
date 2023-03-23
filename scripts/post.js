@@ -3,7 +3,8 @@ function sendData() {
   // esse modo edit só existe se eu tenho o arquivo update.js
   // então se é a primeira aula e não estou editando pode não fazer o if
   // porque eu estou postando não editando AINDA
-  if(editMode){
+  if(!editMode){
+    console.log(eita)
     const id = document.getElementById("submit").getAttribute("data-id");
     editData(id);
     return
