@@ -14,7 +14,7 @@ function enviandoDadosAtuais(id,nameItem,emailItem){
   document.getElementById('name').value = nameItem;
   document.getElementById("submit").setAttribute("data-id",id);
   document.getElementById("submit").innerHTML="Edite aqui!";
-  document.getElementById("submit").innerHTML = "Cadastrar!";
+  editMode = document.getElementById("submit").innerHTML !== "Edite aqui!";
 } 
 
 async function editData(id){
@@ -37,6 +37,7 @@ async function editData(id){
     document.getElementById("submit").removeAttribute("data-id");
     document.getElementById('email').value = '';
     document.getElementById('name').value = ''; 
+    document.getElementById("submit").innerHTML = "Cadastrar!";
   })
   .catch(error => console.error(error));
 }
