@@ -10,21 +10,27 @@
 var editMode = document.getElementById("submit").innerHTML !== "Edite aqui!";
 // agora nós precisamos enviar os dados atuais para o input caso eu queira editar o item
 function enviandoDadosAtuais(id,nameItem,emailItem){
+  // preenchendo os inputs com os valores
   document.getElementById('email').value = emailItem;
   document.getElementById('name').value = nameItem;
+  // colocando como meta dado no botao o data-id com o id
   document.getElementById("submit").setAttribute("data-id",id);
+  // trocando o texto do botao
   document.getElementById("submit").innerHTML="Edite aqui!";
-  editMode = document.getElementById("submit").innerHTML !== "Edite aqui!";
-  console.log(editMode)
+  // arrumando o editMode para true para poder sair do post e vir pro editData
+  editMode = document.getElementById("submit").innerHTML === "Edite aqui!";
 } 
-
+// recebendo o id lá do form do post
 async function editData(id){
+  // criando as variaveis com os novos valores editados
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
+  // criando o json para enviar
   const data = {
     name: name,
     email: email,
   };
+  // criando um response async
   response = await fetch(`${urlComId}${id}.json`, {
     method: 'PATCH',
     headers: {
@@ -33,13 +39,17 @@ async function editData(id){
     body: JSON.stringify(data),
   })
   .then(res =>{
-    console.log("editou");
+    // pegando os dados novos
     PegarDados();
+    // removendo o id do botao depois de editar
     document.getElementById("submit").removeAttribute("data-id");
+    // voltando o valor do email e do nome pra vazio
     document.getElementById('email').value = '';
     document.getElementById('name').value = ''; 
+    // alterando o texto do botão para cadastrar!
     document.getElementById("submit").innerHTML = "Cadastrar!";
-    editMode = document.getElementById("submit").innerHTML !== "Edite aqui!";
+    // colocando a variavel editMode como false para poder agr o post funcionar
+    editMode = document.getElementById("submit").innerHTML === "Edite aqui!";
   })
   .catch(error => console.error(error));
 }
