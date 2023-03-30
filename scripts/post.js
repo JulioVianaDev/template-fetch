@@ -1,4 +1,5 @@
 function sendData() {
+  console.log(editMode);
   // quando essa função é chamada eu checo se eu estou no modo edit
   // esse modo edit só existe se eu tenho o arquivo update.js
   // então se é a primeira aula e não estou editando pode não fazer o if
@@ -42,6 +43,7 @@ function sendData() {
   })
   .then(response => response.json())
   .then(data => {
+    console.log(data)
     document.getElementById('email').value = '';
     document.getElementById('name').value = ''; 
     PegarDados();

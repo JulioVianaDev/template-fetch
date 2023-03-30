@@ -7,7 +7,7 @@
 // que vai checar se o texto escrito no botão é "Edite aqui!"
 // no javascript nós podemos fazer perguntas lógicas e elas
 // retornam uma booleana dizendo se a resposta é sim ou não
-var editMode = document.getElementById("submit").innerHTML !== "Edite aqui!";
+var editMode = document.getElementById("submit").innerHTML === "Edite aqui!";
 // agora nós precisamos enviar os dados atuais para o input caso eu queira editar o item
 function enviandoDadosAtuais(id,nameItem,emailItem){
   // preenchendo os inputs com os valores
